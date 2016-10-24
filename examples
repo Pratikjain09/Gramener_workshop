@@ -1,0 +1,223 @@
+-------------------------------------------------------------------------------
+https://bl.ocks.org/mbostock/3885304
+
+python -m SimpleHTTPServer 8889
+
+
+
+Links:
+    
+http://curran.github.io/screencasts/introToD3/examples/viewer/#/
+http://gramener.github.io/d3js-playbook/
+openrefine.org
+
+nikhikkabbin.github.io
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+   <circle cx="150" cy="50" r="20" stroke="blue" stroke-width="2" fill="red" />
+   <circle cx="220" cy="50" r="10" stroke="red" stroke-width="2" fill="brown" />
+   <circle cx="420" cy="50" r="70" stroke="red" stroke-width="2" fill="brown" />
+   <line x1="30" y1="100" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:4" />
+
+
+
+
+
+
+################
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+	laerning D3
+	</title>
+	<style>
+		p{
+			color: red;
+		}
+		.browncolor {
+			color: brown;
+		}
+		.bluecolor {
+			color: blue;
+		}
+	</style>
+	<script src ="http://d3js.org/d3.v3.min.js">
+		
+	</script>
+</head>
+<body>
+
+<div class="test"></div>
+<div class="test"></div>
+<div class="test"></div>
+<div class="test"></div>
+
+  <svg width="400" height="400" style="background: #ccc;">
+  
+   <g transform='translate(0,60)'>
+  	<circle r=50 fill='yellow' cx=51 cy=45 />
+	<circle r=8 fill='black' id='c' cx=25 cy=30 />
+	<circle r=8 fill='black' id='c' cx=75 cy=30 />
+	<g transform='translate(15,65)'>
+		<path d="M0,0 A40,40 10 0,0 65,0" fill=none stroke=red stroke-width=4.5 />	
+	</g>
+</svg>
+</body>
+</html>
+
+
+
+
+###########################j-query
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+	laerning D3
+	</title>
+	<style>
+		p{
+			color: red;
+		}
+		.browncolor {
+			color: brown;
+		}
+		.bluecolor {
+			color: blue;
+		}
+	</style>
+	<script src ="http://d3js.org/d3.v3.min.js">
+		
+	</script>
+</head>
+<body>
+
+
+
+  <svg width="400" height="400" style="background: #ccc;">
+</svg>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+	var di = {'a':10,'b':20,'c':30}
+	var ks = Object.keys(di)
+	var myarea = $('.circles')
+	console.log("my area:", myarea)
+	ks.forEach(function(k){
+		console.log(k)
+	})
+	</script>
+</body>
+
+
+################d3-circles
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+	laerning D3
+	</title>
+	<style>
+		p{
+			color: red;
+		}
+		.browncolor {
+			color: brown;
+		}
+		.bluecolor {
+			color: blue;
+		}
+	</style>
+	<!--<script src ="http://d3js.org/d3.v3.min.js">-->
+		
+	</script>
+</head>
+<body>
+
+
+
+  <svg  class ="sois" width="400" height="400">
+</svg>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+<script>
+	var di = {'a':10,'b':20,'c':30}
+	var ks = Object.keys(di)
+	var c = 50;
+	var y = 50;
+	d3.select(".sois")
+		.selectAll("circle")
+		.data(ks)
+		.enter()
+		.append("circle")
+		.attr('cx',function(d){
+
+			c = c +100;
+			return c;
+		})
+		.attr('cy',function(d){
+			y = y+100;
+			return y;
+		})
+		.attr('r',function(d){
+			return di[d];
+		 	})
+		.attr('fill','blue');
+	</script>
+
+</body>
+
+</html>
+
+
+####################reading csv
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+	laerning D3
+	</title>
+	<style>
+		p{
+			color: red;
+		}
+		.browncolor {
+			color: brown;
+		}
+		.bluecolor {
+			color: blue;
+		}
+	</style>
+	<!--<script src ="http://d3js.org/d3.v3.min.js">-->
+		
+	</script>
+</head>
+<body>
+
+
+
+  <svg  class ="sois" width="400" height="400">
+</svg>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+<script>
+		d3.csv("data.tsv",function(data){
+			console.log(data)
+		})
+	</script>
+
+</body>
+
+</html>
